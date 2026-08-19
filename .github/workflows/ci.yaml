@@ -40,6 +40,8 @@ jobs:
   test:
     needs: install
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_URL: api.rdicidr.com
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -54,6 +56,8 @@ jobs:
   build:
     needs: install
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_URL: api.rdicidr.com
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -62,5 +66,5 @@ jobs:
       - uses: actions/cache/restore@v3
         with:
           path: node_modules
-          key: deps-${{ hashFiles('package-lock.json') }}
+          key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run build

@@ -44,5 +44,8 @@
     "npm": ">=7.0.0 <8.0.0",
     "yarn": ">=1.22.0",
     "node": ">=15.0.0 <16.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^3.3.1"
   }
 }
